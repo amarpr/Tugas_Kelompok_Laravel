@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    @yield('header')
+    @include('includes.header')
     @yield('content')
-    @yield('footer')
+    @include('includes.footer')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
