@@ -24,10 +24,10 @@
                     <li>
                         <p>Email : Ar_rasyid.info@gmail.com </p>
                     </li>
-                    <img src="assets/img/logofb.png" alt="">
-                    <img src="assets/img/logotwitter.png" alt="">
-                    <img src="assets/img/logoyt.png" alt="">
-                    <img src="assets/img/logog+.png" alt="">
+                    <img src="/img/logofb.png" alt="">
+                    <img src="/img/logotwitter.png" alt="">
+                    <img src="/img/logoyt.png" alt="">
+                    <img src="/img/logog+.png" alt="">
                 </div>
             </div>
         </div>
