@@ -1,0 +1,21 @@
+/* FOOTER */
+#footer
+{
+    color: white;
+    background: #6f00ff;
+}
+#footer img
+{
+    width: 25px;
+    margin-right: 12px;
+}
+#footer li
+{
+    list-style: none;
+}
+#copyrightcontent
+{
+    font-size: 0.75em;
+    text-align: center;
+    background: #36017a;
+}
