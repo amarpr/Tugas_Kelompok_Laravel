@@ -1,9 +1,3 @@
-
-<<<<<<< HEAD
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-=======
->>>>>>> ffdc3a7102dcc14ee54242df2cf9a77b25d2a002
 <!-- konten header -->
 <div class="container-fluid">
     <div class="row mx-2 my-2">
@@ -21,7 +15,7 @@
     </div>
 <!-- tutup header  -->
 <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger px-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info px-5">
         <a class="navbar-brand" href="#"><img src="https://pngimage.net/wp-content/uploads/2018/05/buku-logo-png-4.png" style="width:4rem" alt="gambar-logo-perpustakaan"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +42,7 @@
             </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-sm btn-dark my-2 my-sm-0" type="submit">Search</button>
         </form>
         </div>
     </nav>
