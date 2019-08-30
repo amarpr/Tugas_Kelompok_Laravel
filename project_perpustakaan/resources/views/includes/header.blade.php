@@ -34,9 +34,9 @@
                     Kategori
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Buku Programmer</a>
-                    <a class="dropdown-item" href="#">Majalah</a>
-                    <a class="dropdown-item" href="#">Komik</a>
+                    <a class="dropdown-item" href="{{ url('/buku-pemograman') }}">Buku Programmer</a>
+                    <a class="dropdown-item" href="{{ url('/majalah') }}">Majalah</a>
+                    <a class="dropdown-item" href="{{ url('/comic') }}">Komik</a>
                   </div>
                 </li>
             </ul>
