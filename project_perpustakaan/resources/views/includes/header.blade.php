@@ -1,6 +1,9 @@
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+=======
+>>>>>>> ffdc3a7102dcc14ee54242df2cf9a77b25d2a002
 <!-- konten header -->
 <div class="container-fluid">
     <div class="row mx-2 my-2">
