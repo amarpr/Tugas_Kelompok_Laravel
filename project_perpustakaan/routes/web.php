@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('/buku-pemograman', function () {
+    return view('pages.buku_pemograman');
+});
+
+Route::get('/comic', function () {
+    return view('pages.comic');
+});
+
+Route::get('/majalah', function () {
+    return view('pages.majalah');
+});
