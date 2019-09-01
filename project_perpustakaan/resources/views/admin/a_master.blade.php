@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
+ 
   <link rel="stylesheet" href="backend/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="backend/bower_components/font-awesome/css/font-awesome.min.css">
@@ -37,6 +37,8 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -310,6 +312,82 @@
 
 
 <!-- ISI TABLE ADMIN (ACTIONS) -->
+<div class="container">
+  <button type="button" class="btn btn-primary">Tambah</button>  
+</div>
+
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nama Buku</th>
+      <th scope="col">Tipe Buku</th>
+      <th scope="col">Penulis</th>
+      <th scope="col">Penerbit</th>
+      <th scope="col">Tahun Terbit</th>
+      <th scope="col">Image</th>
+      <th scope="col">Ringkasan</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>
+         <button type="button" class="btn btn-success"href="#">EDIT</button>
+         <button type="button" class="btn btn-danger"href="#">DELETE</button>
+      </td>
+     
+
+     
+
+     
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>
+         <button type="button" class="btn btn-success"href="#">EDIT</button>
+         <button type="button" class="btn btn-danger"href="#">DELETE</button>
+      </td>
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>
+         <button type="button" class="btn btn-success"href="#">EDIT</button>
+         <button type="button" class="btn btn-danger"href="#">DELETE</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
 
   
   </div>
@@ -518,6 +596,11 @@
 </div>
 <!-- ./wrapper -->
 
+
+
+
+<!-- tables js -->
+
 <!-- jQuery 3 -->
 <script src="backend/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -555,5 +638,9 @@
 <script src="backend/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="backend/dist/js/demo.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
