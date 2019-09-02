@@ -26,3 +26,6 @@ Route::get('/comic', function () {
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
