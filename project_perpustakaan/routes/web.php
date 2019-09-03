@@ -27,6 +27,7 @@ Route::get('/majalah', function () {
     return view('pages.majalah');
 });
 
+Route::get('/profiluser','HomeController@profiluser');
 
 Route::get('/admin', function () {
     return view('admin.a_master');

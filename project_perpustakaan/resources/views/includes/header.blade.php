@@ -21,6 +21,13 @@
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profiluser" onclick="event.preventDefault();
+                                                    document.getElementById('user-form').submit();">
+            {{ __('User Profile') }}
+          </a>
+          <form id="user-form" action="/profiluser" method="GET">
+            @csrf
+          </form>
           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
@@ -48,7 +55,7 @@
           <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profil</a>
+          <a class="nav-link" href="">Profil</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
