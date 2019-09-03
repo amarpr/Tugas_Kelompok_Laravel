@@ -9,8 +9,28 @@
     </div>
     <div class="col-md-7">
       <div class="sign mt-5 float-right mr-5">
+        <!-- Authentication Links -->
+        @guest
+        @if (Route::has('register'))
         <a href="{{ url('/login') }}" class="btn btn-sm btn-outline-primary"> Sign In</a>
         <a href="{{ url('/register') }}" class="btn btn-sm btn-primary"> Sign Up</a>
+        @endif
+        @else
+        <a id="navbarDropdown" class="nav-link btn-md btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ Auth::user()->name }} <span class="caret"></span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+        </div>
+        @endguest
       </div>
     </div>
   </div>
