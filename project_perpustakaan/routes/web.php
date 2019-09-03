@@ -11,6 +11,8 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('pages.home');
 });
@@ -26,11 +28,11 @@ Route::get('/comic', function () {
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
-
-
-Route::get('/admin', function () {
-    return view('admin.a_master');
-});
+// view
+Route::get('/tes', 'BooksController@index');
+// tambah data
+Route::get('/tambah', 'BooksController@create');
+Route::post('/tes', 'BooksController@store');
 
 Auth::routes();
 
