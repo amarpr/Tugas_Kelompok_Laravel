@@ -28,11 +28,13 @@ Route::get('/majalah', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('admin.a_master');
-});
+// Route::get('/admin', function () {
+//     return view('admin.a_master');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/admin', 'AdminController@index')->name('adminpage');
