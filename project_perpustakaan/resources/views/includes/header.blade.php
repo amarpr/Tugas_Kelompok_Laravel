@@ -42,11 +42,7 @@
             </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-<<<<<<< HEAD
-            <button class="btn btn-sm btn-info my-2 my-sm-0" type="submit">Search</button>
-=======
             <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Search</button>
->>>>>>> ab11c777f0cd38ba4eab2261098146f7d0a14d81
         </form>
         </div>
     </nav>
