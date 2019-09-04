@@ -37,14 +37,10 @@ Route::post('/tes', 'BooksController@store');
 
 // delete 
 Route::get('/tes/{id}','BooksController@destroy');
+
 // edit
-// Route::get('/tambah', 'BooksController@create');
-// Route::post('/tes', 'BooksController@store');
-
-Route::get('/update', function () {
-    return view('admin.u_data');
-});
-
+Route::get('update/{id}','BooksController@edit');
+Route::put('/tes/{id}', 'BooksController@update');
 
 Auth::routes();
 

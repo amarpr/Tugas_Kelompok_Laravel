@@ -313,7 +313,7 @@
 <!-- ISI TABLE ADMIN (ACTIONS) -->
 <div class="container">
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata">
 Tambah Data Buku
 </button>
 
@@ -347,12 +347,13 @@ Tambah Data Buku
       <td><img src="admin/img/{{$isi->imageBuku}}" style="width:50px;height:50px" alt="gambar"></td>
       <td style="max-paragraph:200">{{$isi->ringkasan}}</td>
       <td>
-         <button type="button" class="btn btn-success" href="#">EDIT</button>
-         <!-- Button trigger modal -->
+
+        <a href="/update/{{$isi->id}}"><button type="button" class="btn btn-primary btn-sm btn-lg" data-toggle="modal" data-target="#editdata">
+          edit
+        </button></a>
         <button type="button" class="btn btn-danger btn-sm btn-lg" data-toggle="modal" data-target="#myModal">
           Delete
         </button>
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">

@@ -44,8 +44,7 @@ class BooksController extends Controller
         return redirect('tes');
     }
     // hapus data
-    public function destroy($id)
-    {
+    public function destroy($id){
         $data = Books::find($id);
         // mencari file
         $file = 'admin/img/'.$data->imageBuku;
@@ -56,9 +55,10 @@ class BooksController extends Controller
         $data->delete();
         return redirect('tes');
     }
+    // Update
     public function edit($id){
-        $data = File::find($id);
-        return view('file.u_file',compact('data'));
+        $data = Books::find($id);
+        return view('admin.u_data',compact('data'));
     }
 
     public function update(Request $request, $id){
@@ -71,28 +71,34 @@ class BooksController extends Controller
             'imageBuku' => 'required|file|mimes:jpg,png,jpeg|max:2048',
             'ringkasan' => 'required',
         ]);
-        $data = File::where('id', $id)->first();
-        $data->name = $request->name;
+        $data = Books::where('id', $id)->first();
+        $data->namaBuku = $request->namaBuku;
+        $data->tipeBuku = $request->tipeBuku;
+        $data->penulis = $request->penulis;
+        $data->penerbit = $request->penerbit;
+        $data->tahunTerbit = $request->tahunTerbit;
+        $data->imageBuku = $request->imageBuku;
+        $data->ringkasan = $request->ringkasan;
 
         // cek
-        if ($request->file('file')== "") {
-            $data->file = $data->file;
+        if ($request->file('imageBuku') == "") {
+            $data->imageBuku = $data->imageBuku;
         }
         else {
-            if ($request->hasFile('file')) {
+            if ($request->hasFile('imageBuku')) {
                 // gambar sebelumnya di hapus dan di ganti baru
-            $file = 'file/'.$data->file;
-            if (is_file($file)) {
-                unlink($file);
+            $imageBuku = 'admin/img/'.$data->imageBuku;
+            if (is_file($imageBuku)) {
+                unlink($imageBuku);
             }
             // 
-            $file = $request->file('file');
-            $filename = $file->getClientOriginalName();
-            $request->file('file')->move('file/',$filename);
-            $data->file = $filename;
+            $imageBuku = $request->file('imageBuku');
+            $filename = $imageBuku->getClientOriginalName();
+            $request->file('imageBuku')->move('admin/img/',$filename);
+            $data->imageBuku = $filename;
         }
     }
         $data->save();
-        return redirect('files');
+        return redirect('tes');
     }
 }
