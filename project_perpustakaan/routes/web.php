@@ -30,9 +30,21 @@ Route::get('/majalah', function () {
 });
 // view
 Route::get('/tes', 'BooksController@index');
+
 // tambah data
 Route::get('/tambah', 'BooksController@create');
 Route::post('/tes', 'BooksController@store');
+
+// delete 
+Route::get('/tes/{id}','BooksController@destroy');
+// edit
+// Route::get('/tambah', 'BooksController@create');
+// Route::post('/tes', 'BooksController@store');
+
+Route::get('/update', function () {
+    return view('admin.u_data');
+});
+
 
 Auth::routes();
 

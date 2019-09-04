@@ -345,10 +345,32 @@ Tambah Data Buku
       <td>{{$isi->penerbit}}</td>
       <td>{{$isi->tahunTerbit}}</td>
       <td><img src="admin/img/{{$isi->imageBuku}}" style="width:50px;height:50px" alt="gambar"></td>
-      <td>{{$isi->ringkasan}}</td>
+      <td style="max-paragraph:200">{{$isi->ringkasan}}</td>
       <td>
-         <button type="button" class="btn btn-success"href="#">EDIT</button>
-         <button type="button" class="btn btn-danger"href="#">DELETE</button>
+         <button type="button" class="btn btn-success" href="#">EDIT</button>
+         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger btn-sm btn-lg" data-toggle="modal" data-target="#myModal">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" id="myModalLabel">KONFIRMASI PENGHAPUSAN</h3>
+              </div>
+              <div class="modal-body">
+              <h4>Apa anda yakin ingin menghapus data ini?</h4>
+              </div>
+              <div class="modal-footer">
+                <a href="/tes/{{$isi->id}}"><button type="submit" class="btn btn-primary">Ok</button></a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </td>
     </tr>
 @endforeach
