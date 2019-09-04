@@ -11,6 +11,8 @@
 |
 */
 
+// use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('pages.home');
 });
@@ -31,10 +33,14 @@ Route::get('/majalah', function () {
 // Route::get('/admin', function () {
 //     return view('admin.a_master');
 // });
+Route::get('/profiluser', 'HomeController@profiluser');
+// view
+Route::get('/tes', 'BooksController@index');
+// tambah data
+Route::get('/tambah', 'BooksController@create');
+Route::post('/tes', 'BooksController@store');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/admin', 'AdminController@index')->name('adminpage');
+Route::get('/adminpage', 'AdminController@index')->name('adminpage');

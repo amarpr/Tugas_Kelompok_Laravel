@@ -296,7 +296,14 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                   </div>
                 </li>
               </ul>
@@ -313,50 +320,13 @@
     @include('admin.n_admin')
 
 
-    <!-- ISI TABLE ADMIN (ACTIONS) -->
-    <div class="container">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Tambah Data Buku
-      </button>
-
-      <!-- Modal create form-->
-      @include('admin.c_data')
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Selamat Datang Admin</h1>
+        </div>
     </div>
 
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">No</th>
-          <th scope="col">Nama Buku</th>
-          <th scope="col">Tipe Buku</th>
-          <th scope="col">Penulis</th>
-          <th scope="col">Penerbit</th>
-          <th scope="col">Tahun Terbit</th>
-          <th scope="col">Image</th>
-          <th scope="col">Ringkasan</th>
-          <th>ACTION</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($data as $isi)
-        <tr>
-          <th scope="row">{{$isi->id}}</th>
-          <td>{{$isi->namaBuku}}</td>
-          <td>{{$isi->tipeBuku}}</td>
-          <td>{{$isi->penulis}}</td>
-          <td>{{$isi->penerbit}}</td>
-          <td>{{$isi->tahunTerbit}}</td>
-          <td><img src="admin/img/{{$isi->imageBuku}}" style="width:50px;height:50px" alt="gambar"></td>
-          <td>{{$isi->ringkasan}}</td>
-          <td>
-            <button type="button" class="btn btn-success" href="#">EDIT</button>
-            <button type="button" class="btn btn-danger" href="#">DELETE</button>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
+    
 
   </div>
   <!-- /.content-wrapper -->
