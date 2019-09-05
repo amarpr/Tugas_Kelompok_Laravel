@@ -14,42 +14,49 @@
 // use Illuminate\Routing\Route;
 
 Route::get('/', function () {
-    return view('pages.home');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.home', compact('categories'));
 });
 
-Route::get('/buku-pemograman', 'BooksController@programmingCat');
+Route::get('/buku-pemograman', function () {
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.buku_pemograman', compact('categories'));
+});
 
-
-// pages comic view
-Route::get('/comic', 'BooksController@comicCat');
-
+Route::get('/comic', function () {
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.comic', compact('categories'));
+});
 
 Route::get('/majalah', function () {
-    return view('pages.majalah');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.majalah', compact('categories'));
 });
 
-// view admin-page
+Route::get('/profiluser', 'HomeController@profiluser');
+
+// view
 Route::get('/admin-page', 'BooksController@index');
 
 // tambah data admin-page
 Route::get('/tambah', 'BooksController@create');
 Route::post('/admin-page', 'BooksController@store');
 
-// delete  admin-page
-Route::get('/admin-page/{id}','BooksController@destroy');
+// delete 
+Route::get('/admin-page/{id}', 'BooksController@destroy');
 
-// edit admin-page
-Route::get('update/{id}','BooksController@edit');
+// edit
+Route::get('update/{id}', 'BooksController@edit');
 Route::put('/admin-page/{id}', 'BooksController@update');
 
 
 // user view
 Route::get('/user-page', 'UserController@index');
 // hapus
-Route::get('/user-page/{id}','UserController@destroy');
+Route::get('/user-page/{id}', 'UserController@destroy');
 
 // update
-Route::get('/user-page/{id}','UserController@update');
+Route::get('/user-page/{id}', 'UserController@update');
 // membalikan ke view
 Route::put('/user-page/{id}', 'UserController@edit');
 // menjalankan fungsi
@@ -60,4 +67,12 @@ Route::put('/user-page/{id}', 'UserController@edit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/adminpage', 'AdminController@index')->name('adminpage');
 
+// categori Crud
+Route::get('/categories', 'categoriesController@index');
+Route::get('/categoriescreate', 'categoriesController@create');
+Route::post('/categories', 'categoriesController@store');
+Route::delete('/categories/{category}', 'categoriesController@destroy');
+Route::get('/categories/{category}/edit', 'categoriesController@edit');
+Route::patch('/categories/{category}', 'categoriesController@update');

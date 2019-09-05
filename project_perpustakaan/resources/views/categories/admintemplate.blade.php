@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title> Categories page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="backend/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -296,7 +296,14 @@
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
                   </div>
                 </li>
               </ul>
@@ -311,81 +318,22 @@
     </header>
 
     @include('admin.n_admin')
-
-
-<!-- ISI TABLE ADMIN (ACTIONS) -->
-<div class="container">
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahdata">
-Tambah Data Buku
-</button>
-
-      <!-- Modal create form-->
-      @include('admin.c_data')
-    </div>
-
-  <table class="table">
-
-<table class="table">
-
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama Buku</th>
-      <th scope="col">Tipe Buku</th>
-      <th scope="col">Penulis</th>
-      <th scope="col">Penerbit</th>
-      <th scope="col">Tahun Terbit</th>
-      <th scope="col">Image</th>
-      <th scope="col">Ringkasan</th>
-      <th>Aksi</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php
-$i = 1;
-?>
-@foreach ($data as $isi)
-    <tr>
-      <th scope="row"><?=$i++?></th>
-      <td>{{$isi->namaBuku}}</td>
-      <td>{{$isi->tipeBuku}}</td>
-      <td>{{$isi->penulis}}</td>
-      <td>{{$isi->penerbit}}</td>
-      <td>{{$isi->tahunTerbit}}</td>
-      <td><img src="admin/img/{{$isi->imageBuku}}" style="width:50px;height:50px" alt="gambar"></td>
-      <td style="max-paragraph:200">{{$isi->ringkasan}}</td>
-      <td>
-
-        <a href="/update/{{$isi->id}}"><button type="button" class="btn btn-primary btn-sm btn-lg" data-toggle="modal" data-target="#editdata">
-          Ubah
-        </button></a>
-        <button type="button" class="btn btn-danger btn-sm btn-lg" data-toggle="modal" data-target="#myModal">
-          Hapus
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="myModalLabel">KONFIRMASI PENGHAPUSAN</h3>
-              </div>
-              <div class="modal-body">
-              <h4>Apa anda yakin ingin menghapus data ini?</h4>
-              </div>
-              <div class="modal-footer">
-                <a href="admin-page/{{$isi->id}}"><button type="submit" class="btn btn-primary">Ok</button></a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+        <a href="/categoriescreate" class="btn btn-primary my-5"> Add Category</a>
+        @if (session('status'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('status') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-      </td>
-    </tr>
-@endforeach
-  </tbody>
-</table>
+        @endif
+    </div>
+     @yield('container')
+       
+
+
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

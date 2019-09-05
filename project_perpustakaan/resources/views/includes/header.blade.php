@@ -62,9 +62,9 @@
             Kategori
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/buku-pemograman') }}">Buku Programmer</a>
-            <a class="dropdown-item" href="{{ url('/majalah') }}">Majalah</a>
-            <a class="dropdown-item" href="{{ url('/comic') }}">Komik</a>
+            @foreach($categories as $ct)
+            <a class="dropdown-item" href="{{ url('/buku-pemograman') }}">{{ $ct->namaKategori }}</a>
+            @endforeach
           </div>
         </li>
       </ul>
