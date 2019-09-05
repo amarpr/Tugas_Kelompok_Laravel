@@ -28,6 +28,9 @@ Route::get('/comic', function () {
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
+
+Route::get('/profiluser', 'HomeController@profiluser');
+
 // view
 Route::get('/admin-page', 'BooksController@index');
 
