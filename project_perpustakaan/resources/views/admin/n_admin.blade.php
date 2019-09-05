@@ -26,18 +26,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li class="active">
+          <a href="/admin-page">
+            <i class="fa fa-home"></i> <span>Books</span>
           </a>
-          <!-- isi link -->
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Form Books</a></li>
-          </ul>
-
+        </li>
+        <li>
+          <a href="/user-page">
+            <i class="fa fa-user"></i> <span>User</span>
+          </a>
+        </li>
+      </ul>
     <!-- /.sidebar -->
   </aside>
 
@@ -46,11 +45,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Books</small>
+      Selamat Datang Admin
+        <small>PANEL ADMIN</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Admin</li>
-      </ol>
     </section>
