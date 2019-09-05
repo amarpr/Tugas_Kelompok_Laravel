@@ -28,7 +28,16 @@ Route::get('/comic', function () {
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
+<<<<<<< HEAD
 Route::get('/profiluser','HomeController@profiluser');
+=======
+
+
+// Route::get('/admin', function () {
+//     return view('admin.a_master');
+// });
+Route::get('/profiluser', 'HomeController@profiluser');
+>>>>>>> master
 // view
 Route::get('/tes', 'BooksController@index');
 
@@ -50,4 +59,4 @@ Route::get('/update', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/adminpage', 'AdminController@index')->name('adminpage');
