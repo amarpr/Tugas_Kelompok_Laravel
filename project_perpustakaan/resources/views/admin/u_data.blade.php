@@ -30,7 +30,7 @@
           @endforeach
       </ul>
       @endif
-    <form class="form-vertical" action="/tes/{{$data->id}}" method="post" enctype="multipart/form-data">
+    <form class="form-vertical" action="/admin-page/{{$data->id}}" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
       <input type="hidden" name="_method" value="PUT">
           <div class="form-group">
@@ -69,7 +69,7 @@
           </div>
               
         <div class="grup-tombol float-right mr-2">
-            <a href="/tes"><button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button></a>
+            <a href="/admin-page"><button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button></a>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
         </form>

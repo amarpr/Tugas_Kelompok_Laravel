@@ -16,7 +16,7 @@
           @endforeach
       </ul>
       @endif
-    <form class="form-vertical" action="/tes" method="post" enctype="multipart/form-data">
+    <form class="form-vertical" action="/admin-page" method="post" enctype="multipart/form-data">
       {{csrf_field()}}
 
           <div class="form-group">

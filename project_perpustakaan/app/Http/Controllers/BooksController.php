@@ -41,7 +41,7 @@ class BooksController extends Controller
             $data->imageBuku = $filename;
             $data->save();
         }
-        return redirect('tes');
+        return redirect('admin-page');
     }
     // hapus data
     public function destroy($id){
@@ -53,7 +53,7 @@ class BooksController extends Controller
             unlink($file);
         }
         $data->delete();
-        return redirect('tes');
+        return redirect('admin-page');
     }
     // Update
     public function edit($id){
@@ -99,6 +99,6 @@ class BooksController extends Controller
         }
     }
         $data->save();
-        return redirect('tes');
+        return redirect('admin-page');
     }
 }

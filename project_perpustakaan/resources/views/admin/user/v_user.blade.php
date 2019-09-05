@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>AdminLTE 2 | User</title>
   <!-- Tell the browser to be responsive to screen width -->
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="backend/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -305,139 +305,112 @@
         </ul>
       </div>
     </nav>
-  </header>
+</header>
 
   @include('admin.n_admin')
-
-
-<!-- ISI TABLE ADMIN (ACTIONS) -->
+@include('admin.user.u_user')
 <div class="container">
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahdata">
-Tambah Data Buku
-</button>
-
-<!-- Modal create form-->
- @include('admin.c_data')
-</div>
 
 <table class="table">
-  <thead class="thead-dark">
+ <?php 
+  $i = 1;
+ ?>
+  <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Nama Buku</th>
-      <th scope="col">Tipe Buku</th>
-      <th scope="col">Penulis</th>
-      <th scope="col">Penerbit</th>
-      <th scope="col">Tahun Terbit</th>
-      <th scope="col">Image</th>
-      <th scope="col">Ringkasan</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
       <th>Aksi</th>
     </tr>
   </thead>
-  <tbody>
-<?php
-$i = 1;
-?>
 @foreach ($data as $isi)
+  <tbody>
     <tr>
       <th scope="row"><?=$i++?></th>
-      <td>{{$isi->namaBuku}}</td>
-      <td>{{$isi->tipeBuku}}</td>
-      <td>{{$isi->penulis}}</td>
-      <td>{{$isi->penerbit}}</td>
-      <td>{{$isi->tahunTerbit}}</td>
-      <td><img src="admin/img/{{$isi->imageBuku}}" style="width:50px;height:50px" alt="gambar"></td>
-      <td style="max-paragraph:200">{{$isi->ringkasan}}</td>
+      <td>{{$isi->name}}</td>
+      <td>{{$isi->email}}</td>
+      <td>{{$isi->phone}}</td>
       <td>
+        <button type="button" class="btn btn-sm btn-primary btn-lg" data-toggle="modal" data-target="#tambahUser">Edit</button>
+        <button type="button" class="btn btn-sm btn-danger btn-lg" data-toggle="modal" data-target="#hapusUser">Hapus</button>
+      </td>
+    </tr>
+  </tbody>
+@endforeach
+</table>
+</div>
 
-        <a href="/update/{{$isi->id}}"><button type="button" class="btn btn-primary btn-sm btn-lg" data-toggle="modal" data-target="#editdata">
-          Ubah
-        </button></a>
-        <button type="button" class="btn btn-danger btn-sm btn-lg" data-toggle="modal" data-target="#myModal">
-          Hapus
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="hapusUser" tabindex="-1" role="dialog" aria-labelledby="hapusUserLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title" id="myModalLabel">KONFIRMASI PENGHAPUSAN</h3>
+                <h3 class="modal-title" id="hapusUserLabel">KONFIRMASI PENGHAPUSAN</h3>
               </div>
               <div class="modal-body">
               <h4>Apa anda yakin ingin menghapus data ini?</h4>
               </div>
               <div class="modal-footer">
-                <a href="admin-page/{{$isi->id}}"><button type="submit" class="btn btn-primary">Ok</button></a>
+                <a href="user-page/{{$isi->id}}"><button type="submit" class="btn btn-primary">Ok</button></a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
               </div>
             </div>
           </div>
         </div>
-      </td>
-    </tr>
-@endforeach
-  </tbody>
-</table>
 
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
+</div>
+<footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.13
     </div>
     <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
     reserved.
-  </footer>
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+    <!-- ./wrapper -->
 
-<!-- tables js -->
+    <!-- tables js -->
 
-<!-- jQuery 3 -->
-<script src="backend/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="backend/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="backend/bower_components/raphael/raphael.min.js"></script>
-<script src="backend/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="backend/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="backend/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="backend/bower_components/moment/min/moment.min.js"></script>
-<script src="backend/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="backend/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="backend/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="backend/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="backend/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="backend/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="backend/dist/js/demo.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- jQuery 3 -->
+    <script src="backend/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="backend/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Morris.js charts -->
+    <script src="backend/bower_components/raphael/raphael.min.js"></script>
+    <script src="backend/bower_components/morris.js/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="backend/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="backend/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="backend/bower_components/moment/min/moment.min.js"></script>
+    <script src="backend/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="backend/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="backend/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="backend/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="backend/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="backend/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="backend/dist/js/demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </footer>
 </body>
 </html>
 
