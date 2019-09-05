@@ -3,27 +3,6 @@
 @section('title', 'Buku Pemrograman')
 
 @section('content')
-    @php
-        $datas = [
-            [
-                "image" => "photo buku",
-                "name" => "Deception Point",
-                "pengarang" => "Dan Brown"
-            ],[
-                "image" => "photo buku",
-                "name" => "Deception Point",
-                "pengarang" => "Dan Brown"
-            ],[
-                "image" => "photo buku",
-                "name" => "Deception Point",
-                "pengarang" => "Dan Brown"
-            ],[
-                "image" => "photo buku",
-                "name" => "Deception Point",
-                "pengarang" => "Dan Brown"
-            ]
-        ];
-    @endphp
     <div class="container">
         <h4 class="my-lg-3">Comic</h4>
         <table class="table table-borderless table-striped table-hover">
@@ -34,15 +13,15 @@
                 <th>Action</th>
             </thead>
             <tbody>
-                @foreach ($datas as $data)
+                @foreach ($data as $isi)
                     <tr>
                         <td style="width:15%">
                         <div class="card">
-                            <img src="{{ asset('/img/deception-point.jpg') }}" class="card-img-top" alt="{{ $data['image'] }}" style="width:100%">
+                            <img src="admin/img/{{$isi->imageBuku}}" style="width:150px;height:200px" alt="gambar">
                         </div> 
                         </td>
-                        <td class="align-middle"> {{ $data['name'] }}</td>
-                        <td class="align-middle"> {{ $data['pengarang'] }}</td>
+                        <td class="align-middle"> {{$isi->namaBuku}}</td>
+                        <td class="align-middle"> {{$isi->penulis}}</td>
                         <td class="align-middle"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Detail</button></td>
                     </tr>
                 @endforeach

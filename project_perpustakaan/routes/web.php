@@ -17,29 +17,28 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('/buku-pemograman', function () {
-    return view('pages.buku_pemograman');
-});
+Route::get('/buku-pemograman', 'BooksController@programmingCat');
 
-Route::get('/comic', function () {
-    return view('pages.comic');
-});
+
+// pages comic view
+Route::get('/comic', 'BooksController@comicCat');
+
 
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
 
-// view
+// view admin-page
 Route::get('/admin-page', 'BooksController@index');
 
-// tambah data
+// tambah data admin-page
 Route::get('/tambah', 'BooksController@create');
 Route::post('/admin-page', 'BooksController@store');
 
-// delete 
+// delete  admin-page
 Route::get('/admin-page/{id}','BooksController@destroy');
 
-// edit
+// edit admin-page
 Route::get('update/{id}','BooksController@edit');
 Route::put('/admin-page/{id}', 'BooksController@update');
 

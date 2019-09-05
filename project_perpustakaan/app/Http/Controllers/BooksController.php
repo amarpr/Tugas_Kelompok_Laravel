@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
-    public function index(){
-        $data = Books::all();
-        return view('admin.a_master',compact('data'));
-    }
+        public function index(){
+            $data = Books::all();
+            return view('admin.a_master',compact('data'));
+        }
+
     public function create(){
         return view('admin.c_data');
     }
@@ -97,8 +98,19 @@ class BooksController extends Controller
             $request->file('imageBuku')->move('admin/img/',$filename);
             $data->imageBuku = $filename;
         }
+
+        
     }
         $data->save();
         return redirect('admin-page');
+    }
+    // detail comic
+    public function comicCat(){
+        $data = Books::all();
+        return view('pages.comic',compact('data'));
+    }
+    public function programmingCat(){
+        $data = Books::all();
+        return view('pages.buku_pemograman',compact('data'));
     }
 }
