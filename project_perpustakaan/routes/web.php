@@ -28,16 +28,10 @@ Route::get('/comic', function () {
 Route::get('/majalah', function () {
     return view('pages.majalah');
 });
-<<<<<<< HEAD
-Route::get('/profiluser','HomeController@profiluser');
-=======
-
-
 // Route::get('/admin', function () {
 //     return view('admin.a_master');
 // });
 Route::get('/profiluser', 'HomeController@profiluser');
->>>>>>> master
 // view
 Route::get('/tes', 'BooksController@index');
 
