@@ -44,3 +44,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adminpage', 'AdminController@index')->name('adminpage');
+
+// categori Crud
+Route::get('/categories', 'categoriesController@index');
+Route::get('/categoriescreate', 'categoriesController@create');
+Route::post('/categories', 'categoriesController@store');
+Route::delete('/categories/{category}', 'categoriesController@destroy');
+Route::get('/categories/{category}/edit', 'categoriesController@edit');
+Route::patch('/categories/{category}', 'categoriesController@update');
