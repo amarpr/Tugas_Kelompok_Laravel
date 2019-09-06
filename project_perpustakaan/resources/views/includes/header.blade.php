@@ -51,20 +51,20 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
+        <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/') }}">Beranda <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Profil</a>
+        <li class="nav-item {{ Request::is('profile') ? 'active' : '' }}">
+          <a class="nav-link" href="{{ url('/profile') }}">Profil</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown {{ (Request::is('buku-pemograman') || Request::is('majalah') || Request::is('comic')) ? 'active' : '' }}">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Kategori
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/buku-pemograman') }}">Buku Programmer</a>
-            <a class="dropdown-item" href="{{ url('/majalah') }}">Majalah</a>
-            <a class="dropdown-item" href="{{ url('/comic') }}">Komik</a>
+            <a class="dropdown-item {{ Request::is('buku-pemograman') ? 'active' : '' }}" href="{{ url('/buku-pemograman') }}">Buku Programmer</a>
+            <a class="dropdown-item {{ Request::is('majalah') ? 'active' : '' }}" href="{{ url('/majalah') }}">Majalah</a>
+            <a class="dropdown-item {{ Request::is('comic') ? 'active' : '' }}" href="{{ url('/comic') }}">Komik</a>
           </div>
         </li>
       </ul>

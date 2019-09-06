@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 /* FOOTER */
 #footer
 {
@@ -115,3 +117,16 @@
     margin-bottom: -15%;
     color: #495057;
 }
+
+/* ----- style profile page ----- */
+#profilePage h3{
+    color:#222;
+    font-family: 'Montserrat', sans-serif;
+}
+#profilePage p{
+    text-align: justify;
+    color:#222;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ----- end style profile page ----- */
