@@ -119,7 +119,7 @@
                 </div>
                 <!-- end card aris -->
 
-                <!-- card aris-->
+                <!-- card rizal-->
                 <div class="card mb-3 col-lg-5 col-md-5">
                     <div class="row no-gutters">
                         <div class="col-md-4">
@@ -138,7 +138,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- end card aris -->
+                <!-- end card rizal -->
+
+                <!-- card hendra-->
+                <div class="card mb-3 col-lg-5 col-md-5">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ asset('/img/aris.png') }}" class="card-img" alt="foto">
+                            <h6 class="card-text text-center">Hendra</h6>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Team Member</h5>
+                                
+                                <p class="card-text">
+                                    Full Stack Developer
+                                </p>
+                                <p class="card-text"><small class="text-muted">edu-tech 2019 &copy;</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end card hendra -->
 
             </div>
         </div>
