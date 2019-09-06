@@ -14,19 +14,23 @@
 // use Illuminate\Routing\Route;
 
 Route::get('/', function () {
-    return view('pages.home');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.home', compact('categories'));
 });
 
 Route::get('/buku-pemograman', function () {
-    return view('pages.buku_pemograman');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.buku_pemograman', compact('categories'));
 });
 
 Route::get('/comic', function () {
-    return view('pages.comic');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.comic', compact('categories'));
 });
 
 Route::get('/majalah', function () {
-    return view('pages.majalah');
+    $categories = DB::table('categories')->select('*')->get();
+    return view('pages.majalah', compact('categories'));
 });
 
 Route::get('/profiluser', 'HomeController@profiluser');
@@ -39,20 +43,20 @@ Route::get('/tambah', 'BooksController@create');
 Route::post('/admin-page', 'BooksController@store');
 
 // delete 
-Route::get('/admin-page/{id}','BooksController@destroy');
+Route::get('/admin-page/{id}', 'BooksController@destroy');
 
 // edit
-Route::get('update/{id}','BooksController@edit');
+Route::get('update/{id}', 'BooksController@edit');
 Route::put('/admin-page/{id}', 'BooksController@update');
 
 
 // user view
 Route::get('/user-page', 'UserController@index');
 // hapus
-Route::get('/user-page/{id}','UserController@destroy');
+Route::get('/user-page/{id}', 'UserController@destroy');
 
 // update
-Route::get('/user-page/{id}','UserController@update');
+Route::get('/user-page/{id}', 'UserController@update');
 // membalikan ke view
 Route::put('/user-page/{id}', 'UserController@edit');
 // menjalankan fungsi
